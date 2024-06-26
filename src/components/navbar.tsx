@@ -1,44 +1,33 @@
-import { Send } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ModeToggle } from "@/components/mode-toggle";
+import Logo from "../../public/logo.png";
+import { Avatar, AvatarImage } from "./ui/avatar";
 
 const headerLinks = [
     {
-        name: 'About',
+        name: 'about',
         link: '/about'
-    },
-    {
-        name: 'Contact',
-        link: '/contact'
     },
 ];
 
 export default function Navbar() {
     return (
         <div id="header">
-            <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
-                <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
-                    <Link to="/" className="flex items-center gap-2 text-lg font-semibold md:text-base">
-                        <Send className="h-6 w-6" />
-                        <span className="sr-only">Koero Labss</span>
+            <header className="sticky top-0 flex h-16 items-center gap-4 border-dashed border-b bg-background px-4 md:px-6">
+                <nav className="flex flex-row items-center gap-5 text-sm">
+                    <Link to="/">
+                    <div className="cursor-pointer hover:bg-gray-200 rounded-full p-0.5">
+                        <Avatar>
+                            <AvatarImage src={Logo} alt="logo" width={70} />
+                        </Avatar>
+                        </div>
                     </Link>
                     {headerLinks.map((link, index) => (
-                        <Link key={index} to={link.link}>{link.name}</Link>
-                    ))}                </nav>
+                        <Link key={index} to={link.link} className="hover:underline">{link.name}</Link>
+                    ))}
+                </nav>
                 <div className="flex w-full items-center gap-4 md:ml-auto md:gap-2 lg:gap-4">
-                    <div className="ml-auto flex-1 sm:flex-initial">
-
-                    </div>
-                    {/* <form className="ml-auto flex-1 sm:flex-initial">
-                        <div className="relative">
-                            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                            <Input
-                                type="search"
-                                placeholder="Search products..."
-                                className="pl-8 sm:w-[300px] md:w-[200px] lg:w-[300px]"
-                            />
-                        </div>
-                    </form> */}
+                    <div className="ml-auto flex-1 sm:flex-initial" />
                     <ModeToggle />
                 </div>
             </header>
