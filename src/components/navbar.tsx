@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { ModeToggle } from "@/components/mode-toggle";
-import Logo from "../../public/logo.png";
-import { Avatar, AvatarImage } from "./ui/avatar";
+import Logo from "../../public/logo.svg";
 
 const headerLinks = [
     {
@@ -16,11 +15,9 @@ export default function Navbar() {
             <header className="sticky top-0 flex h-16 items-center gap-4 border-dashed border-b bg-background px-4 md:px-6">
                 <nav className="flex flex-row items-center gap-5 text-sm">
                     <Link to="/">
-                    <div className="cursor-pointer hover:bg-gray-200 rounded-full p-0.5">
-                        <Avatar>
-                            <AvatarImage src={Logo} alt="logo" width={70} />
-                        </Avatar>
-                        </div>
+                    <div className="cursor-pointer hover:bg-gray-200 p-0.5">
+                        <img src={Logo} alt="logo" className="w-12" />
+                    </div>
                     </Link>
                     {headerLinks.map((link, index) => (
                         <Link key={index} to={link.link} className="hover:underline">{link.name}</Link>

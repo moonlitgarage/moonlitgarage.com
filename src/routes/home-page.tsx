@@ -1,14 +1,16 @@
 import { LINK_AERONODE, LINK_TWITTER } from "@/common/constants";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { H1, H3, List } from "@/components/ui/typography";
+import { H3, List } from "@/components/ui/typography";
 import { Link } from "react-router-dom";
 
 export default function HomePage() {
     return (
         <div>
             <div className="text-center">
-                <H1 className="p-6">Koero Labs</H1>
+                <div>
+                    <img src="images/main-logo.svg" alt="logo" className=" mx-auto" />
+                </div>
                 <div className="py-12">
                     <H3>
                         we make aerial autonomy easy.
