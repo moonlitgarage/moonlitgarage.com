@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTheme } from '@/components/theme-provider';
 import { LINK_AERONODE, LINK_TWITTER } from "@/common/constants";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -60,11 +61,20 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
 );
 
 const HomePage: React.FC = () => {
+  const { theme } = useTheme();
+
+  const isDarkTheme = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
   return (
     <div>
       <div className="text-center">
         <div>
-          <img src="images/main-logo.svg" alt="logo" className="mx-auto" />
+          <img 
+            src="main.png" 
+            alt="logo" 
+            className={`mx-auto transition-all duration-300 ${isDarkTheme ? 'invert' : ''}`}
+            style={{ filter: isDarkTheme ? 'invert(1) hue-rotate(180deg)' : 'none' }}
+          />
         </div>
         <div className="py-12">
           <H3>
