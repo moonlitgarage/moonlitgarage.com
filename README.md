@@ -1,5 +1,5 @@
-# [koerolabs.com](https://koerolabs.com)
-website for [koerolabs.com](https://koerolabs.com)
+# [moonlitgarage.com](https://moonlitgarage.com)
+website for [moonlitgarage.com](https://moonlitgarage.com)
 
 ## Components installed
 - [shadcn/ui](https://ui.shadcn.com)
