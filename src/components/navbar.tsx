@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { ModeToggle } from "@/components/mode-toggle";
 import Logo from "../../public/logo.svg";
+import { Button } from "./ui/button";
 
 const headerLinks = [
     {
-        name: 'about',
+        name: 'About',
         link: '/about'
     },
 ];
@@ -20,7 +21,11 @@ export default function Navbar() {
                     </div>
                     </Link>
                     {headerLinks.map((link, index) => (
-                        <Link key={index} to={link.link} className="hover:underline">{link.name}</Link>
+                        <Link key={index} to={link.link} className="hover:underline">
+                            <Button variant={"outline"}>
+                                {link.name}
+                            </Button>
+                        </Link>
                     ))}
                 </nav>
                 <div className="flex w-full items-center gap-4 md:ml-auto md:gap-2 lg:gap-4">
