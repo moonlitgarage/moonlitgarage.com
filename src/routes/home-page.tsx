@@ -72,7 +72,7 @@ const HomePage: React.FC = () => {
           <img 
             src="main.png" 
             alt="logo" 
-            className={`mx-auto transition-all duration-300 ${isDarkTheme ? 'invert' : ''}`}
+            className={`w-2/3 mx-auto transition-all duration-300 ${isDarkTheme ? 'invert' : ''}`}
             style={{ filter: isDarkTheme ? 'invert(1) hue-rotate(180deg)' : 'none' }}
           />
         </div>
