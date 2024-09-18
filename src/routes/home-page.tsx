@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTheme } from '@/components/theme-provider';
-import { LINK_AERONODE, LINK_TWITTER } from "@/common/constants";
+import { LINK_AERONODE, LINK_FORM_NEWTON } from "@/common/constants";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { H3, List } from "@/components/ui/typography";
@@ -17,20 +17,22 @@ const projectsMap: Map<string, Project> = new Map([
   ['AeroNode', {
     title: 'AeroNode',
     description: [
-      'Making drone programming dead simple.',
-      'Get the board, plug it into your drone, and get an easy to use api exposed over your drone.'
+      'Aeronode powers all of our aerial robots. It allows the user to control any drone by providing a simple python api over it.',
+      'It is built from the ground up keeping compatibility, performance and ease of use in mind.',
+      'Aeronode is fully open source and we are always looking out for feedback and feature requests.'
     ],
     link: LINK_AERONODE,
     buttonText: 'Check it out!'
   }],
-  ['Tensor', {
-    title: 'Tensor',
+  ['Newton', {
+    title: 'Newton',
     description: [
-      'We are cooking up something new!',
-        'Stay tuned for more updates.'
+        'Newton is a new and very special robot that we are working on. It is in early stages of development, but we expect it to be SOTA in its category.',
+        'We will be providing more information about it in November. Stay tuned!',
+        'If you are interested in being a beta tester and getting early access, please fill out the form below.'
     ],
-    link: LINK_TWITTER,
-    buttonText: 'Twitter'
+    link: LINK_FORM_NEWTON,
+    buttonText: 'Form'
   }]
 ]);
 
@@ -50,12 +52,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
         ))}
       </List>
     </CardContent>
-    <CardFooter>
-      <Link to={project.link}>
-        <Button variant={"default"}>
-          {project.buttonText}
-        </Button>
-      </Link>
+    <CardFooter className='w-full'>
+        <div className='flex flex-row w-full'>
+            <div className='w-1/5' />
+            <Link to={project.link} className='w-3/5'>
+                <Button variant={"default"} className='w-full'>
+                {project.buttonText}
+                </Button>
+            </Link>
+            <div className='w-1/5' />
+        </div>
+      
     </CardFooter>
   </Card>
 );
@@ -78,7 +85,7 @@ const HomePage: React.FC = () => {
         </div>
         <div className="py-12">
           <H3>
-            {"not your traditional robotics company"}<br />
+            {"Not Your Traditional Robotics Company"}<br />
           </H3>
         </div>
       </div>
